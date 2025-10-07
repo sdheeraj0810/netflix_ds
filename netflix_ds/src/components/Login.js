@@ -3,11 +3,9 @@ import Header from "./Header";
 import { validateData } from "../utils/validate";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from "../utils/firebase";
-import { useNavigate } from "react-router";
-
+import {bgURL, picURL} from "../utils/constants"
 
 const Login=()=>{
-    const navigate=useNavigate();
     const [isLogin,setIsLogin]=useState(true);
     const [errorMessage,seterrorMessage]=useState('');
     const email=useRef(null);
@@ -26,7 +24,6 @@ const Login=()=>{
                 const user = userCredential.user;
                 console.log(user);                
                 seterrorMessage('Signed in successfully.');
-                navigate("/browse");
             })
             .catch((error) => {
                 const errorCode = error.code;
@@ -40,14 +37,14 @@ const Login=()=>{
             .then((userCredential) => {
                 // Signed up 
                 const user = userCredential.user;
-                alert(fullname.current.value);
+                
                 updateProfile(user, {
-                displayName: fullname.current.value, photoURL: "https://occ-0-2590-2164.1.nflxso.net/dnm/api/v6/vN7bi_My87NPKvsBoib006Llxzg/AAAABZ7qC6gxpcs0iblCWByBD5LTaBelBEw-HjkveFX7vGhCRc-qG0pkuYWNFrtmxt7SESITdIlOAzpQB4nGIoazlAPq_E41qcM.png?r=2c8"
+                displayName: fullname.current.value, photoURL: picURL
                     }).then(() => {
-                        navigate("/browse");
                         seterrorMessage('Signed up successfully.');
                     }).catch((error) => {
                     // An error occurred
+                    alert('error');
                 });                
                 
             })
@@ -64,7 +61,7 @@ const Login=()=>{
         <div>
             <Header />
             <div className="absolute">
-                <img src="https://assets.nflxext.com/ffe/siteui/vlv3/bebd95d0-65f9-41a9-9d12-4794db63653e/web/IN-en-20250922-TRIFECTA-perspective_5e75cfb4-3797-4f17-866b-181ff91a51dd_large.jpg" />            
+                <img src={bgURL} />            
             </div>    
             <div className="flex justify-center pt-20 flex-col items-center">
                 <div className="p-12 bg-black/70 relative w-4/12">
