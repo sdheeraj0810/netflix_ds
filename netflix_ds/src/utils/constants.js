@@ -3,3 +3,15 @@ export const logo=<g><path d="M105.06233,14.2806261 L110.999156,30 C109.249227,2
 export const picURL="https://occ-0-2590-2164.1.nflxso.net/dnm/api/v6/vN7bi_My87NPKvsBoib006Llxzg/AAAABZ7qC6gxpcs0iblCWByBD5LTaBelBEw-HjkveFX7vGhCRc-qG0pkuYWNFrtmxt7SESITdIlOAzpQB4nGIoazlAPq_E41qcM.png?r=2c8";
 
 export const bgURL="https://assets.nflxext.com/ffe/siteui/vlv3/bebd95d0-65f9-41a9-9d12-4794db63653e/web/IN-en-20250922-TRIFECTA-perspective_5e75cfb4-3797-4f17-866b-181ff91a51dd_large.jpg";
+
+export const nowplayingURL="https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1";
+
+export const movieVideoURL="https://api.themoviedb.org/3/movie/";
+
+export const tmdbOptions  = {
+  method: 'GET',
+  headers: {
+    accept: 'application/json',
+    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkNDRkOTM2MGIzZjM3NTYxMmY3MGNmY2NlNTkyYTk3MyIsIm5iZiI6MTc2MDAxNDYyNC45MzEsInN1YiI6IjY4ZTdiMTIwYWIyM2YxOGNjYjczZGI0ZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.9Yt6ABrnkN4aMCEFRDADABOV2ncK9gS4Bw-m8gYGwZ4'
+  }
+};
